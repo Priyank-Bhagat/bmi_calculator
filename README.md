@@ -1,6 +1,6 @@
 # bmi_calc
 
-A new Flutter project.
+The BMI calc is an app related to health. Using a BMI calculator, we can estimate our ideal body weight.
 
 ## Getting Started
 
