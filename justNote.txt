@@ -181,7 +181,7 @@ Routes naming :-  if app has so many screens to redirect then it's better to giv
 
             -> we can give routes name under Material App in 'main.dart'. there is a field name 'routes'.
 
-             initialRoute: '/',                                             // this are home screen or first screen that you want to display.
+             initialRoute: '/',                                             // this are home screen or first screen that you want to display
 
              routes: {
                 '/first': (context) => const FirstScreen(),                  // here we just need to specify string name : screen name , we can direct use string name as route.
