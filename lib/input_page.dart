@@ -1,3 +1,4 @@
+import 'package:bmi_calc/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
@@ -138,18 +139,24 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(icon: Icon(Icons.remove), ontap: (){setState(() {
-                              weight --;
-                            });},),
+                            RoundIconButton(
+                              icon: Icon(Icons.remove),
+                              ontap: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
                             SizedBox(
                               width: 6,
                             ),
-                            RoundIconButton(icon: Icon(Icons.add),
-                            ontap: (){
-                              setState(() {
-                                weight ++;
-                              });
-                            },
+                            RoundIconButton(
+                              icon: Icon(Icons.add),
+                              ontap: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                             ),
                           ],
                         )
@@ -175,16 +182,22 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(icon: Icon(Icons.remove), ontap: (){setState(() {
-                              age --;
-                            });},),
+                            RoundIconButton(
+                              icon: Icon(Icons.remove),
+                              ontap: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
                             SizedBox(
                               width: 6,
                             ),
-                            RoundIconButton(icon: Icon(Icons.add),
-                              ontap: (){
+                            RoundIconButton(
+                              icon: Icon(Icons.add),
+                              ontap: () {
                                 setState(() {
-                                  age ++;
+                                  age++;
                                 });
                               },
                             ),
@@ -198,11 +211,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10),
-            height: 40,
-            width: double.infinity,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ResultsPage();
+              }));
+            },
+            child: Container(
+              child: Text('Calculate'),
+              color: kBottomContainerColor,
+              margin: const EdgeInsets.only(top: 10),
+              height: 40,
+              width: double.infinity,
+            ),
           )
         ],
       ),
@@ -211,7 +232,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({required this.icon,required this.ontap});
+  RoundIconButton({required this.icon, required this.ontap});
 
   final Widget icon;
   final Function() ontap;
