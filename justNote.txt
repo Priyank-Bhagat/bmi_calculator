@@ -160,3 +160,36 @@ steps :-
 conclusion -> we are not limited with flutter pre-defined custom fields. we can also build our own widget with scratch.
 
 
+-----------------Vid 133--------------------------------------------------
+
+
+Routes and Routes naming to switch between screens.
+
+Routes :- is like path to go to screen
+
+         -> Navigator is like person that will guide you to reach the destination
+         -> 'push' will push screen in stack , context is all info about current screen state
+         -> MaterialPageRoute will take function and will return screen.
+        Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) { return SecondRoute(); }),
+         );
+
+
+
+Routes naming :-  if app has so many screens to redirect then it's better to give route names.
+
+            -> we can give routes name under Material App in 'main.dart'. there is a field name 'routes'.
+
+             initialRoute: '/',                                             // this are home screen or first screen that you want to display.
+
+             routes: {
+                '/first': (context) => const FirstScreen(),                  // here we just need to specify string name : screen name , we can direct use string name as route.
+                '/second': (context) => const SecondScreen(),
+              },
+
+            -> usage
+              Navigator.pushNamed(context, '/second');         // we directly specified route using predefined String
+
+
+
