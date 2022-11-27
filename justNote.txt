@@ -193,3 +193,39 @@ Routes naming :-  if app has so many screens to redirect then it's better to giv
 
 
 
+
+
+-----------------Vid 134--------------------------------------------------
+
+Maps[Dart] -> is just like List[Dart] but it contain keys instead of indexNumbers.
+
+
+syntax->
+
+ Map<key Datatype, Value Datatype> MapName = {
+                                                key : value,
+                                                key : value,
+                                                             }
+
+Example->
+
+  Map<String, int> phoneBook = {
+                                'james': 124567893,
+                                'rouder': 458135924,
+                                'Kyle': 4528237812,
+                                                    }
+
+
+  RetriveData->
+
+  =>  print(phoneBook['Kyle']); // output 4528237812
+
+  =>  print(phoneBook.keys); // output {'james','rouder','kyle'}
+
+  =>  print(phoneBook.value); // output all values
+
+  AddData->
+
+  phoneBook['newName'] = 5452328748;
+
+  print(phoneBook['newName']); // output 5452328748
