@@ -1,3 +1,4 @@
+import 'package:bmi_calc/bmi_brain.dart';
 import 'package:bmi_calc/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -213,8 +214,16 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
+
+              BmiBrain calc = BmiBrain(height: height, weight: weight);
+
+
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ResultsPage();
+                return ResultsPage(
+                  bmiResult: calc.calculateBMI(),
+                  interpretation: calc.getInterpretation(),
+                  resultText: calc.getResult(),
+                );
               }));
             },
             child: Container(

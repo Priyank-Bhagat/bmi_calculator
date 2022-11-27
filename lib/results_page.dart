@@ -4,7 +4,11 @@ import 'constants.dart';
 import 'custom_card.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({Key? key}) : super(key: key);
+  const ResultsPage({ required this.bmiResult, required this.resultText, required this.interpretation});
+
+  final String? bmiResult;
+  final String resultText;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +39,10 @@ class ResultsPage extends StatelessWidget {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('OverWeight', style: kResultTextStyle,),
-                  Text('25.8', style: kBMITextStyle,),
+                  Text(resultText, style: kResultTextStyle,),
+                  Text(bmiResult!, style: kBMITextStyle,),
                   Text(
-                      'You have a higher than normal body weight. Try to exercise  more.' ,style:  kBodyTextStyle, textAlign: TextAlign.center,)
+                      interpretation,style:  kBodyTextStyle, textAlign: TextAlign.center,)
 
                 ],
               ),
