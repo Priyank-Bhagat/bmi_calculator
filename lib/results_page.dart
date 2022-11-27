@@ -6,7 +6,8 @@ class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Random'),),
+      appBar: AppBar(title: Text('Ranom'),),
+      body: Text('body'),
     );
   }
 }
