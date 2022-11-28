@@ -23,6 +23,9 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
+    double scrWidth = MediaQuery.of(context).size.width;
+    double scrHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,7 +40,6 @@ class _InputPageState extends State<InputPage> {
                   flex: 1,
                   child: CustomCard(
                     tapDetec: () {
-                      print('male selected');
                       setState(() {
                         genderSelected = Gender.male;
                       });
@@ -55,12 +57,11 @@ class _InputPageState extends State<InputPage> {
                   flex: 1,
                   child: CustomCard(
                     tapDetec: () {
-                      print('female selected');
                       setState(() {
                         genderSelected = Gender.female;
                       });
                     },
-                    cardChild: CardContentCol(
+                    cardChild: const CardContentCol(
                         title: 'Female', icon: FontAwesomeIcons.venus),
                     colour: genderSelected == Gender.female
                         ? kCardSelectedColor
@@ -101,15 +102,14 @@ class _InputPageState extends State<InputPage> {
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
-                      inactiveTrackColor: Color(0xff8D8E98),
-                      thumbColor: Color(0xffEb1555),
+                      inactiveTrackColor: const Color(0xff8D8E98),
+                      thumbColor: const Color(0xffEb1555),
                     ),
                     child: Slider(
                       value: height.toDouble(),
                       onChanged: (newValue) {
                         setState(() {
                           height = newValue.round();
-                          print(height);
                         });
                       },
                       min: 110,
@@ -129,7 +129,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Weight',
                           style: kTextStyleWord,
                         ),
@@ -141,7 +141,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
-                              icon: Icon(Icons.remove),
+                              icon: const Icon(Icons.remove),
                               ontap: () {
                                 setState(() {
                                   weight--;
@@ -149,10 +149,10 @@ class _InputPageState extends State<InputPage> {
                               },
                             ),
                             SizedBox(
-                              width: 6,
+                              width: scrWidth * 0.04,
                             ),
                             RoundIconButton(
-                              icon: Icon(Icons.add),
+                              icon: const Icon(Icons.add),
                               ontap: () {
                                 setState(() {
                                   weight++;
@@ -172,7 +172,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Age',
                           style: kTextStyleWord,
                         ),
@@ -184,7 +184,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
-                              icon: Icon(Icons.remove),
+                              icon: const Icon(Icons.remove),
                               ontap: () {
                                 setState(() {
                                   age--;
@@ -192,10 +192,10 @@ class _InputPageState extends State<InputPage> {
                               },
                             ),
                             SizedBox(
-                              width: 6,
+                              width: scrWidth * 0.04,
                             ),
                             RoundIconButton(
-                              icon: Icon(Icons.add),
+                              icon: const Icon(Icons.add),
                               ontap: () {
                                 setState(() {
                                   age++;
@@ -214,9 +214,7 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
-
               BmiBrain calc = BmiBrain(height: height, weight: weight);
-
 
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return ResultsPage(
@@ -227,11 +225,15 @@ class _InputPageState extends State<InputPage> {
               }));
             },
             child: Container(
-              child: const Center(child: Text('Calculate', style: kLargeButtonWord,)),
               color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 15),
-              height: 50,
+              margin: EdgeInsets.only(top: scrHeight * 0.01),
+              height: scrHeight * 0.09,
               width: double.infinity,
+              child: const Center(
+                  child: Text(
+                'Calculate',
+                style: kLargeButtonWord,
+              )),
             ),
           )
         ],
@@ -241,23 +243,25 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({required this.icon, required this.ontap});
+   RoundIconButton({required this.icon, required this.ontap});
 
   final Widget icon;
   final Function() ontap;
 
   @override
   Widget build(BuildContext context) {
+    double scrWidth = MediaQuery.of(context).size.width;
+
     return RawMaterialButton(
       onPressed: ontap,
-      child: icon,
-      fillColor: Color(0xff4C4F5E),
-      constraints: const BoxConstraints.tightFor(
-        width: 40.0,
-        height: 40.0,
+      fillColor: const Color(0xff4C4F5E),
+      constraints: BoxConstraints.tightFor(
+        width: scrWidth * 0.1,
+        height: scrWidth * 0.1,
       ),
       elevation: 6,
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
+      child: icon,
     );
   }
 }

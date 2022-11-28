@@ -12,9 +12,11 @@ class ResultsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double scrHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR'),
         centerTitle: true,
       ),
       body: Column(
@@ -24,8 +26,8 @@ class ResultsPage extends StatelessWidget {
              flex: 2,
              child: Container(
              alignment: Alignment.bottomLeft,
-               padding: EdgeInsets.all(8),
-               child: Text(
+               padding: const EdgeInsets.all(8),
+               child: const Text(
                 'Your Result',
                 style: kTitleTextStyle,
                 textAlign: TextAlign.end,
@@ -55,8 +57,8 @@ class ResultsPage extends StatelessWidget {
             },
             child: Container(
               color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 8),
-              height: 50,
+              margin:  EdgeInsets.only(top: scrHeight * 0.01),
+              height: scrHeight * 0.09,
               width: double.infinity,
               child: const Center(
                   child: Text(
