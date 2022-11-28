@@ -26,7 +26,7 @@ class ResultsPage extends StatelessWidget {
              flex: 2,
              child: Container(
              alignment: Alignment.bottomLeft,
-               padding: const EdgeInsets.all(8),
+               padding: const EdgeInsets.all(4),
                child: const Text(
                 'Your Result',
                 style: kTitleTextStyle,
@@ -39,10 +39,11 @@ class ResultsPage extends StatelessWidget {
             child: CustomCard(
               colour: const Color(0xff1D1E33),
               cardChild: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(resultText, style: kResultTextStyle,),
-                  Text(bmiResult!, style: kBMITextStyle,),
+                  Text(resultText, style: kResultTextStyle,textAlign: TextAlign.center,),
+                  Text(bmiResult!, style: kBMITextStyle,textAlign: TextAlign.center,),
                   Text(
                       interpretation,style:  kBodyTextStyle, textAlign: TextAlign.center,)
 
