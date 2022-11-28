@@ -10,7 +10,7 @@ The BMICalc is a health-related app. BMI stands for BODY MASS INDEX. Using a BMI
 
 You can find out if your current weight is good for your health or not by just following the steps that are shown below in the BMICalc app.
 
-Step 1> Select Your Gender.
+Step 1> Select Your Gender🚻.
 
 <p> 
     <img width="250" src="https://user-images.githubusercontent.com/115228605/204234008-2291da0e-ed3c-43b8-9e86-522f6627e4f4.gif" alt="something was here🤔">
@@ -18,7 +18,7 @@ Step 1> Select Your Gender.
 
 
 
-Step 2> Select Your Height using slider.
+Step 2> Select Your Height 📏  using slider.
 
 <p> 
     <img width="250" src="https://user-images.githubusercontent.com/115228605/204234370-242051e1-4647-4fb9-811b-dc19d1647b60.gif" alt="something was here🤔">
