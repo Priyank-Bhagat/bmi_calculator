@@ -40,10 +40,10 @@ And A result screen will apear.
     <img width="250" src="https://user-images.githubusercontent.com/115228605/204235967-1ce25ccd-12b5-48fd-9b75-83873f8eb37c.jpeg" alt="something was here🤔">
 </p>
 
-
+## Download
 
 You can 
-👉[Download ](https://github.com/Priyank-Bhagat/bmi_calculator/raw/master/test/build/bmiCalc.apk)👈The BMICalc App and be healthy.
+👉[Download ](https://mega.nz/file/V2thwTxD#-oQ618d_ivYZ1kSLXXw6gsJgV0z9ibXQ1ViY1WYF98A)👈The BMICalc App and be healthy.
 
 ## Getting Started
 
