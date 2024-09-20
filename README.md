@@ -43,7 +43,7 @@ And A result screen will apear.
 ## Download
 
 You can 
-👉[Download ](https://mega.nz/file/V2thwTxD#-oQ618d_ivYZ1kSLXXw6gsJgV0z9ibXQ1ViY1WYF98A)👈The BMICalc App and be healthy.
+👉[Download ](https://drive.google.com/file/d/1Xh6W9pRCOJAn2rV4ktE5f2D87IoZIuOs/view?usp=sharing)👈The BMICalc App and be healthy.
 
 ## Getting Started
 
